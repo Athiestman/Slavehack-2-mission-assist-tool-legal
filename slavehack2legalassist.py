@@ -110,7 +110,7 @@ def ddos(something):
     leng3 = len(newlist)
     #slave printer
     while(counter != leng3):
-        print("connect " + newlist[counter])
+        print("connect " + newlist[counter])['Action: Steal Money', 'Bank Info: ', '23.149.213.42', '230466085160', 'Rep: 1,965']
         newline()
         print("ul 1.ddos")
         newline()
@@ -131,10 +131,12 @@ def steal_money(something):
     print("drill " + account + " " + bankip)
     newline()
     print("connect "  + bankip)
+    newline()
     print("account login " + account)
+    newline()
     print("account balance")
+    newline()
     print("account transfer " + yourbank + " " + yourbank2 + " ")
-
 
 #Frame           type = 6
 def frame(something):
@@ -212,9 +214,9 @@ while(True):
     while(done == True):
         print("mission start\n--------------------------------------------\n")
         main = list_maker()
-        Dick = main[0]
+        dick = main[0]
         test = 1
-        if(Dick[0:6] == "Action:" ):
+        if(dick[0:7] == "Action:"):
             test = 0
         action = main[test]
         type = extraction_single(action)
@@ -234,6 +236,9 @@ while(True):
         else:
             print("error 1")
             print(main)
+            print(dick)
+            print(dick[0:6])
             print(type)
             print(action)
+            print(test)
         done = False
