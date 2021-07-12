@@ -137,6 +137,7 @@ def steal_money(something):
     print("account balance")
     newline()
     print("account transfer " + yourbank + " " + yourbank2 + " ")
+    newline()
 
 #Frame           type = 6
 def frame(something):
