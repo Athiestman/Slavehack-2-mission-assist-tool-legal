@@ -16,6 +16,7 @@ def list_maker():
         data = input("data:")
         if("Action:" in data and "Rep:" in data):
             list1 = data.splitlines()
+            Penis = False
         else:
             list1.append(data)
             if(data[0:3] == "Rep"):
@@ -46,34 +47,6 @@ def extraction_full(input):
         position = position + 1
     return(newlist)
 
-
-
-#detects type of mission and spits out the type as an integer.
-#input = lst()
-def type_detect(input):
-    #tests which position action: is in
-    Dick = input[0]
-    test = 1
-    if(Dick[0:6] == "action:" ):
-        test = 0
-    action = input[test]
-    action = extraction_single(action)
-    if(action == "Delete One"):
-        type = 1
-    elif(action == "Delete All"):
-        type = 2
-    elif(action == "Transfer File"):
-        type = 3
-    elif(action == "DDoS"):
-        type = 4
-    elif(action == "Steal Money"):
-        type = 5
-    elif(action == "Frame"):
-        type = 6
-    else:
-        type = 7
-
-    return(type)
 
 
 
@@ -225,27 +198,42 @@ yourbank = input("please type your bank ip :>")
 newline()
 yourbank2 = input("please type your bank acct# :>")
 newline()
+
+
+
+
 #int main
 while(True):
     done = True
-    nothing = input("Press any key to continue:")
+    nothing = input("Press enter key to continue:")
     print("\n--------------------------------------------\n--------------------------------------------\n")
+
+
     while(done == True):
         print("mission start\n--------------------------------------------\n")
         main = list_maker()
-        type = type_detect(main)
-        if(type == 1):
+        Dick = main[0]
+        test = 1
+        if(Dick[0:6] == "Action:" ):
+            test = 0
+        action = main[test]
+        type = extraction_single(action)
+        
+        if(type == "Delete One"):
             delete_one(main)
-        elif(type == 2):
+        elif(type == "Delete All"):
             delete_all(main)
-        elif(type == 3):
+        elif(type == "Transfer File"):
             transfer_file(main)
-        elif(type == 4):
+        elif(type == "DDoS"):
             ddos(main)
-        elif(type == 5):
+        elif(type == "Steal Money"):
             steal_money(main)
-        elif(type == 6):
+        elif(type == "Frame"):
             frame(main)
         else:
-            print("error")
+            print("error 1")
+            print(main)
+            print(type)
+            print(action)
         done = False
