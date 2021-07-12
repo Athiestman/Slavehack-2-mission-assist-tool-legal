@@ -14,10 +14,12 @@ def list_maker():
     Penis = True
     while(Penis):
         data = input("data:")
-        list1.append(data)
-        if(data[0:3] == "Rep"):
-            Penis = False
-
+        if("Action:" in data and "Rep:" in data):
+            list1 = data.splitlines()
+        else:
+            list1.append(data)
+            if(data[0:3] == "Rep"):
+                Penis = False
     return(list1)
 
 
